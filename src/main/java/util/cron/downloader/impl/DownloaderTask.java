@@ -12,7 +12,7 @@ public class DownloaderTask implements Task {
     }
 
     @Override
-    public void schedule() throws Exception {
+    public void schedule() {
         // TODO: implement downloader task
     }
 
