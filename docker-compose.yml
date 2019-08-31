@@ -1,0 +1,7 @@
+version: "3.5"
+
+services:
+  cron-downloader:
+    build: .
+    container_name: cron-downloader
+    restart: always
