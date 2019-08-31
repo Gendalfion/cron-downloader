@@ -1,10 +1,8 @@
 package util.cron;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
-class CronDownloaderApplicationTests {
+class CronDownloaderApplicationTests extends SpringContextBasedTest {
 
 	@Test
 	void contextLoads() {

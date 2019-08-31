@@ -8,7 +8,7 @@ FROM maven:3-jdk-12 AS BUILD_IMAGE
 WORKDIR /root/
 COPY --from=DEPS_IMAGE /root/dev/deps/ ./deps/
 COPY . .
-RUN mvn -Dmaven.repo.local=/root/deps clean install -DskipTests=true
+RUN mvn -Dmaven.repo.local=/root/deps clean package -DskipTests=true
 
 FROM openjdk:12-alpine
 WORKDIR /root/

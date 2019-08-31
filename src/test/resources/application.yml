@@ -1,0 +1,2 @@
+logging.level:
+  util.cron: DEBUG

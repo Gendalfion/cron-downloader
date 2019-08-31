@@ -1,0 +1,13 @@
+{
+  "downloadDirectory": ".",
+  "downloaderList": [
+    {
+      "cron": "*/10 * * * * ?",
+      "resourcePath": "TEST_PATH_1"
+    },
+    {
+      "cron": "*/5 * * * * ?",
+      "resourcePath": "TEST_PATH_2"
+    }
+  ]
+}
