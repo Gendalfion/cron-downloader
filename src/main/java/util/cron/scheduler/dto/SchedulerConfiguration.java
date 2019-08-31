@@ -1,4 +1,4 @@
-package util.cron.scheduler;
+package util.cron.scheduler.dto;
 
 import lombok.Data;
 

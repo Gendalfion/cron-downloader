@@ -1,5 +1,7 @@
 package util.cron.scheduler;
 
+import java.util.List;
+
 public interface SchedulerConfigurationService {
-    SchedulerConfiguration getConfig();
+    List<CronSchedule> getCronSchedules();
 }
