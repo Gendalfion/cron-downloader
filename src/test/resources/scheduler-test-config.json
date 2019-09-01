@@ -1,13 +1,15 @@
 {
-  "downloadDirectory": ".",
+  "downloadDirectory": "/download/directory",
   "downloaderList": [
     {
       "cron": "*/10 * * * * ?",
-      "resourcePath": "TEST_PATH_1"
+      "resourcePath": "https://download.example.com/json/doc1",
+      "outputFileName": "outFileName1.json"
     },
     {
       "cron": "*/5 * * * * ?",
-      "resourcePath": "TEST_PATH_2"
+      "resourcePath": "https://download.example.com/pdf/doc2",
+      "outputFileName": "outFileName2.json"
     }
   ]
 }

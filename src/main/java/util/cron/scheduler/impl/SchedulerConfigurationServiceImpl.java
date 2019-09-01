@@ -38,7 +38,7 @@ public class SchedulerConfigurationServiceImpl implements SchedulerConfiguration
         this.cronSchedules = configuration.getDownloaderList().stream()
                 .map(downloaderDto -> new CronSchedule() {
                     private final Task task = downloaderTaskFactory
-                            .createDownloadTask(downloaderDto.getResourcePath(), downloadDirectory);
+                            .createDownloadTask(downloaderDto.getResourcePath(), downloadDirectory, downloaderDto.getOutputFileName());
 
                     private final String cron = downloaderDto.getCron();
 

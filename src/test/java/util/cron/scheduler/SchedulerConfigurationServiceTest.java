@@ -6,6 +6,8 @@ import org.springframework.test.context.TestPropertySource;
 import util.cron.SpringContextBasedTest;
 import util.cron.downloader.impl.DownloaderTask;
 
+import java.nio.file.Path;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -28,15 +30,15 @@ class SchedulerConfigurationServiceTest extends SpringContextBasedTest {
 
         assertTrue(firstSchedule.getTask() instanceof DownloaderTask);
         var firstTask = (DownloaderTask) firstSchedule.getTask();
-        assertEquals(".", firstTask.getDownloadDirectory());
-        assertEquals("TEST_PATH_1", firstTask.getResource());
+        assertEquals(Path.of("/download", "directory", "outFileName1.json"), firstTask.getDownloadPath());
+        assertEquals("https://download.example.com/json/doc1", firstTask.getResource());
 
         var secondSchedule = cronSchedules.get(1);
         assertEquals("*/5 * * * * ?", secondSchedule.getCron());
 
         assertTrue(secondSchedule.getTask() instanceof DownloaderTask);
         var secondTask = (DownloaderTask) secondSchedule.getTask();
-        assertEquals(".", secondTask.getDownloadDirectory());
-        assertEquals("TEST_PATH_2", secondTask.getResource());
+        assertEquals(Path.of("/download", "directory", "outFileName2.json"), secondTask.getDownloadPath());
+        assertEquals("https://download.example.com/pdf/doc2", secondTask.getResource());
     }
 }

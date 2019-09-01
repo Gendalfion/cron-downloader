@@ -15,5 +15,6 @@ public class SchedulerConfiguration {
     public static class Downloader {
         private String cron;
         private String resourcePath;
+        private String outputFileName;
     }
 }
