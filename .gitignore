@@ -29,3 +29,7 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# Possibly generated files
+config.json
+output/
