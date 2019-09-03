@@ -6,6 +6,7 @@ services:
     build: .
     environment:
       UTIL_CRON_SCHEDULER_CONFIG_PATH: file:///opt/config.json
+      UTIL_CRON_DOWNLOAD_DIRECTORY: /var/output
     container_name: cron-downloader
     restart: always
     volumes: 

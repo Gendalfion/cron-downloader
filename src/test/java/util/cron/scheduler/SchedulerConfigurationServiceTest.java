@@ -13,7 +13,8 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @TestPropertySource(properties = {
-        "util.cron.scheduler.config.path=classpath:scheduler-test-config.json"
+        "util.cron.scheduler.config.path=classpath:scheduler-test-config.json",
+        "util.cron.download.directory=/download/directory"
 })
 class SchedulerConfigurationServiceTest extends SpringContextBasedTest {
     @Autowired

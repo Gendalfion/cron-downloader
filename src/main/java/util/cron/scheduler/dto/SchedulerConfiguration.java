@@ -8,7 +8,6 @@ import static java.util.Collections.emptyList;
 
 @Data
 public class SchedulerConfiguration {
-    private String downloadDirectory = "";
     private List<Downloader> downloaderList = emptyList();
 
     @Data

@@ -24,6 +24,7 @@ public class SchedulerConfigurationServiceImpl implements SchedulerConfiguration
 
     @SneakyThrows
     public SchedulerConfigurationServiceImpl(@Value("${util.cron.scheduler.config.path:classpath:default-scheduler-config.json}") String jsonConfigPath,
+                                             @Value("${util.cron.download.directory:}") String downloadDirectory,
                                              ResourceLoader resourceLoader,
                                              ObjectMapper mapper,
                                              DownloaderTaskFactory downloaderTaskFactory) {
@@ -34,7 +35,6 @@ public class SchedulerConfigurationServiceImpl implements SchedulerConfiguration
                 .readValue(resource.getInputStream(), util.cron.scheduler.dto.SchedulerConfiguration.class);
         log.debug("Got configuration {}", configuration);
 
-        final var downloadDirectory = configuration.getDownloadDirectory();
         this.cronSchedules = configuration.getDownloaderList().stream()
                 .map(downloaderDto -> new CronSchedule() {
                     private final Task task = downloaderTaskFactory

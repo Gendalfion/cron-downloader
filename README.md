@@ -17,7 +17,6 @@ export JAVA_HOME=/path/to/jdk12
 ```bash
 # Step 1: create config file
 echo '{
-  "downloadDirectory": "/var/output",
   "downloaderList": [
     {
       "cron": "*/5 * * * * ?",
