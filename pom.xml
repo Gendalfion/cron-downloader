@@ -86,15 +86,22 @@
 				<executions>
 					<execution>
 						<id>default</id>
-						<phase>install</phase>
 						<goals>
 							<goal>build</goal>
+							<goal>push</goal>
 						</goals>
 					</execution>
 				</executions>
 				<configuration>
 					<contextDirectory>${project.build.directory}</contextDirectory>
-					<repository>${project.artifactId}</repository>
+					<repository>gendalfion/${project.artifactId}</repository>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<configuration>
+					<skip>true</skip>
 				</configuration>
 			</plugin>
 		</plugins>
